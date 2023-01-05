@@ -99,9 +99,8 @@ bot.on('callback_query', function onCallbackQuery(callbackQuery) {
 						bot.deleteMessage(res.chat.id, res.message_id);
 						var balasan = response.data.choices[0].text;
 						bot
-							.sendMessage(msg.from.id, `${balasan}`, {
+							.sendMessage(msg.from.id, balasan, {
 								reply_to_message_id: msg.message_id,
-								parse_mode: 'markdown',
 							})
 							.then(() => {
 								menuUtama(msg);
